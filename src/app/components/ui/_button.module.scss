@@ -1,0 +1,73 @@
+
+@use '../../styles/variables' as vars;
+@use '../../styles/mixins' as mix;
+
+.button {
+  @include mix.button-base; 
+
+  
+  &--primary {
+    background-color: vars.$color-primary;
+    color: vars.$color-text-dark; 
+    border: 1px solid vars.$color-primary; 
+
+    &:hover {
+      background-color: vars.$color-primary-dark;
+      border-color: vars.$color-primary-dark;
+    }
+    &:active {
+      background-color: darken(vars.$color-primary-dark, 5%);
+    }
+  }
+
+  &--secondary {
+    background-color: transparent;
+    color: vars.$color-primary; 
+    border: 1px solid vars.$color-primary;
+
+    &:hover {
+      background-color: rgba(vars.$color-primary, 0.1); 
+      color: vars.$color-primary-dark;
+      border-color: vars.$color-primary-dark;
+    }
+    &:active {
+      background-color: rgba(vars.$color-primary, 0.2);
+    }
+  }
+
+  &--danger {
+    background-color: vars.$color-error; 
+    color: vars.$color-text-light;
+    border: 1px solid vars.$color-error;
+
+    &:hover {
+      background-color: darken(vars.$color-error, 10%);
+      border-color: darken(vars.$color-error, 10%);
+    }
+    &:active {
+      background-color: darken(vars.$color-error, 15%);
+    }
+  }
+
+  
+  &:disabled {
+    background-color: vars.$color-border;
+    color: vars.$color-placeholder;
+    cursor: not-allowed;
+    border-color: vars.$color-border;
+    opacity: 0.7;
+    &:hover {
+      background-color: vars.$color-border; 
+    }
+  }
+
+  
+  &--small {
+    padding: vars.$spacing-xxs vars.$spacing-sm;
+    font-size: vars.$font-size-sm;
+  }
+  &--large {
+    padding: vars.$spacing-sm vars.$spacing-lg;
+    font-size: vars.$font-size-lg;
+  }
+}
