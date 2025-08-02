@@ -1,0 +1,97 @@
+@use '../styles/variables' as vars;
+@use '../styles/mixins' as mix;
+
+.employees-page { 
+  @include mix.box-shadow('md'); 
+  background-color: vars.$color-text-light;
+  padding: vars.$spacing-lg;
+  border-radius: vars.$border-radius-md;
+
+  &__title { 
+    font-size: vars.$font-size-xl;
+    color: vars.$color-text-dark;
+    margin-bottom: vars.$spacing-lg;
+    text-align: center;
+  }
+
+  &__actions { 
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: vars.$spacing-md;
+  }
+
+  &__no-data { 
+    text-align: center;
+    color: vars.$color-text-dark;
+    font-size: vars.$font-size-lg;
+    padding: vars.$spacing-xl;
+    border: 1px dashed vars.$color-border;
+    border-radius: vars.$border-radius-sm;
+  }
+
+  &__table-container { 
+    overflow-x: auto; 
+  }
+
+  &__table { 
+    width: 100%;
+    border-collapse: collapse; 
+    margin-top: vars.$spacing-md;
+  }
+
+  &__table-head { 
+    background-color: vars.$color-background-dark;
+    color: vars.$color-text-light;
+  }
+
+  &__table-header { 
+    padding: vars.$spacing-sm vars.$spacing-md;
+    text-align: left;
+    font-size: vars.$font-size-md;
+    font-weight: 600;
+    border-bottom: 2px solid vars.$color-primary; 
+  }
+
+  &__table-body { 
+    
+  }
+
+  &__table-row { 
+    border-bottom: 1px solid vars.$color-border;
+    &:nth-child(even) { 
+      background-color: vars.$color-background-light;
+    }
+    &:hover { 
+      background-color: lighten(vars.$color-background-light, 3%);
+    }
+  }
+
+  &__table-data { 
+    padding: vars.$spacing-sm vars.$spacing-md;
+    color: vars.$color-text-dark;
+    font-size: vars.$font-size-sm;
+  }
+
+  &__table-actions { 
+    display: flex;
+    gap: vars.$spacing-xs; 
+  }
+
+  &__action-button { 
+    
+    padding: vars.$spacing-xxs vars.$spacing-sm; 
+    font-size: vars.$font-size-sm;
+  }
+
+  
+  @include mix.media-breakpoint-down(vars.$breakpoint-md) {
+    .employees-page__table-header,
+    .employees-page__table-data {
+      padding: vars.$spacing-xs; 
+    }
+    .employees-page__action-button {
+      font-size: vars.$font-size-xs; 
+      padding: vars.$spacing-xxs;
+    }
+  }
+}

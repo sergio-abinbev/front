@@ -1,0 +1,82 @@
+@use "variables" as vars; 
+
+
+@mixin media-breakpoint-up($breakpoint) {
+  @media (min-width: #{$breakpoint}) {
+    
+    @content;
+  }
+}
+
+@mixin media-breakpoint-down($breakpoint) {
+  @media (max-width: #{$breakpoint - 0.02px}) {
+    @content;
+  }
+}
+
+
+@mixin center-element {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+@mixin box-shadow($level: "md") {
+  @if $level == "sm" {
+    box-shadow: vars.$shadow-sm; 
+  } @else if $level == "md" {
+    box-shadow: vars.$shadow-md; 
+  } @else if $level == "lg" {
+    box-shadow: vars.$shadow-lg; 
+  } @else {
+    box-shadow: none;
+  }
+}
+
+
+@mixin visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+
+@mixin font-style(
+  $size: "md",
+  $weight: normal,
+  $line-height: vars.$line-height-base
+) {
+  
+  @if $size == "sm" {
+    font-size: vars.$font-size-sm; 
+  } @else if $size == "md" {
+    font-size: vars.$font-size-md; 
+  } @else if $size == "lg" {
+    font-size: vars.$font-size-lg; 
+  } @else if $size == "xl" {
+    font-size: vars.$font-size-xl; 
+  } @else {
+    font-size: $size; 
+  }
+  font-weight: $weight;
+  line-height: $line-height;
+}
+
+
+@mixin button-base {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: vars.$spacing-xs vars.$spacing-sm; 
+  border: none;
+  border-radius: vars.$border-radius-sm; 
+  cursor: pointer;
+  font-size: vars.$font-size-md; 
+  transition: background-color 0.3s ease, color 0.3s ease;
+}

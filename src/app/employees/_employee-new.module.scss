@@ -1,0 +1,24 @@
+@use '../styles/variables' as vars;
+@use '../styles/mixins' as mix;
+
+.employee-new { 
+  @include mix.box-shadow('md');
+  background-color: vars.$color-text-light;
+  padding: vars.$spacing-lg;
+  border-radius: vars.$border-radius-md;
+  max-width: 600px; 
+  margin: vars.$spacing-xl auto; 
+
+  &__title { 
+    font-size: vars.$font-size-xl;
+    color: vars.$color-text-dark;
+    margin-bottom: vars.$spacing-lg;
+    text-align: center;
+  }
+
+  
+  @include mix.media-breakpoint-down(vars.$breakpoint-sm) {
+    padding: vars.$spacing-md;
+    margin: vars.$spacing-lg auto;
+  }
+}

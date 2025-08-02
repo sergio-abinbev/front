@@ -1,0 +1,56 @@
+
+$color-primary: #FFD700;       
+$color-primary-dark: #CCA700;  
+$color-primary-light: #FFE033;
+
+$color-text-dark: #333333;       
+$color-text-light: #FFFFFF;      
+$color-background-light: #F9F9F9; 
+$color-background-dark: #000000;  
+$color-border: #BBBBBB;         
+$color-placeholder: #AAAAAA;
+
+
+$color-success: #28a745; 
+$color-error: #dc3545;   
+$color-warning: #ffc107; 
+$color-info: #17a2b8;    
+
+$spacing-unit: 8px;
+$spacing-xxs: $spacing-unit / 2; 
+$spacing-xs: $spacing-unit;      
+$spacing-sm: $spacing-unit * 2;  
+$spacing-md: $spacing-unit * 3;  
+$spacing-lg: $spacing-unit * 4;  
+$spacing-xl: $spacing-unit * 6;  
+$spacing-xxl: $spacing-unit * 8; 
+
+
+$font-family-base: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+$font-size-base: 16px;
+
+$font-size-xs: 0.75rem; 
+$font-size-sm: 0.875rem; 
+$font-size-md: 1rem;     
+$font-size-lg: 1.25rem;  
+$font-size-xl: 1.5rem;   
+
+$line-height-base: 1.5;
+$line-height-heading: 1.2;
+
+$border-radius-sm: 4px;
+$border-radius-md: 8px;
+$border-radius-lg: 12px;
+$border-radius-circle: 50%;
+
+
+$shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+$shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+$shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+
+
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
+$breakpoint-xxl: 1400px;

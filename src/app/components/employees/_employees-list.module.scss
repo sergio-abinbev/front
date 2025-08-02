@@ -1,0 +1,168 @@
+
+@use '../../styles/variables' as vars;
+@use '../../styles/mixins' as mix;
+
+.employees-list {
+  @include mix.box-shadow('md');
+  background-color: vars.$color-text-light;
+  padding: vars.$spacing-lg;
+  border-radius: vars.$border-radius-md;
+
+  &__title {
+    font-size: vars.$font-size-xl;
+    color: vars.$color-text-dark;
+    margin-bottom: vars.$spacing-lg;
+    text-align: center;
+  }
+
+  &__actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: vars.$spacing-md;
+  }
+
+  &__no-data {
+    text-align: center;
+    color: vars.$color-text-dark;
+    font-size: vars.$font-size-lg;
+    padding: vars.$spacing-xl;
+    border: 1px dashed vars.$color-border;
+    border-radius: vars.$border-radius-sm;
+  }
+
+  &__grid-container {
+    border: 1px solid vars.$color-border;
+    border-radius: vars.$border-radius-sm;
+    overflow: hidden;
+    margin-top: vars.$spacing-md;
+  }
+
+  &__grid-header {
+    display: flex;
+    background-color: vars.$color-background-dark;
+    color: vars.$color-text-light;
+    font-weight: 600;
+    font-size: vars.$font-size-md;
+    border-bottom: 2px solid vars.$color-primary;
+  }
+
+  &__grid-header-cell,
+  &__grid-cell {
+    flex: 1;
+    padding: vars.$spacing-sm vars.$spacing-md;
+    text-align: left;
+    
+    &:nth-child(1) { flex: 1.5; }
+    &:nth-child(2) { flex: 1.5; }
+    &:nth-child(3) { flex: 2; }
+    &:nth-child(4) { flex: 1.5; text-align: center; } 
+  }
+
+  &__grid-cell {
+    color: vars.$color-text-dark;
+    font-size: vars.$font-size-sm;
+    display: flex;
+    align-items: center;
+  }
+
+  &__grid-row {
+    display: flex;
+    border-bottom: 1px solid vars.$color-border;
+    
+    &:nth-child(even) {
+      background-color: vars.$color-background-light;
+    }
+    &:hover {
+      background-color: lighten(vars.$color-background-light, 3%);
+    }
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  &__row-actions {
+    display: flex;
+    gap: vars.$spacing-xs;
+    justify-content: center;
+    width: 100%;
+  }
+
+  &__action-button {
+    padding: vars.$spacing-xxs vars.$spacing-sm;
+    font-size: vars.$font-size-sm;
+  }
+
+  
+  @include mix.media-breakpoint-down(vars.$breakpoint-md) {
+    &__grid-container {
+      border: none;
+      padding: 0;
+    }
+    &__grid-header {
+      display: none;
+    }
+
+    &__grid-row {
+      flex-direction: column;
+      margin-bottom: vars.$spacing-md;
+      padding: vars.$spacing-sm;
+      border: 1px solid vars.$color-border;
+      border-radius: vars.$border-radius-sm;
+      &:nth-child(even), &:nth-child(odd) {
+        background-color: vars.$color-background-light;
+      }
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    &__grid-cell {
+      flex: none; 
+      width: 100%; 
+      padding: vars.$spacing-xxs 0; 
+      border-bottom: 1px dashed vars.$color-border;
+      
+      &:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
+      }
+      
+      &::before {
+        content: attr(data-label);
+        font-weight: 600;
+        margin-right: vars.$spacing-xs;
+        color: vars.$color-text-dark;
+        display: inline-block;
+        min-width: 80px;
+      }
+
+      
+      &:nth-child(4) { 
+          padding-top: vars.$spacing-sm; 
+          padding-bottom: 0; 
+          text-align: left; 
+          
+          &::before { 
+              display: block; 
+              margin-bottom: vars.$spacing-xs; 
+          }
+      }
+    }
+    
+    &__row-actions {
+        justify-content: flex-start; 
+        margin-top: 0; 
+        
+        padding-left: 0; 
+        padding-right: 0; 
+    }
+
+    
+    &__action-button {
+      padding: vars.$spacing-xxs vars.$spacing-xs; 
+      font-size: vars.$font-size-xs; 
+      min-width: 60px; 
+      height: 28px; 
+    }
+  }
+}
