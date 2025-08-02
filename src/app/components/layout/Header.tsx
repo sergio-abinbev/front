@@ -9,7 +9,6 @@ export const Header: React.FC = () => {
   return (
     <header className={styles['main-header']}>
       <div className={styles['main-header__container']}>
-        
         <div className={styles['main-header__logo']}>
           <Link href="/">
             <Image
