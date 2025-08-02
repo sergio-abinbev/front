@@ -74,43 +74,48 @@ const EmployeeForm: React.FC<EmployeeFormProps> = ({ onSubmit, initialData = {} 
       {error && <p className={styles['employee-form__error']}>{error}</p>}
       <Input
         label="Primeiro Nome"
+        placeholder="Primeiro Nome"
         name="firstName"
         value={formData.firstName}
         onChange={handleChange}
+        onBlur={(e)=>console.log({e})}
         required
-      />
+        />
       <Input
         label="Sobrenome"
+        placeholder="Sobrenome"
         name="lastName"
         value={formData.lastName}
         onChange={handleChange}
         required
-      />
+        />
       <Input
         label="Email"
+        placeholder="Email"
         name="email"
         type="email"
         value={formData.email}
         onChange={handleChange}
         required
-      />
+        />
       <Input
         label="Número do Documento"
+        placeholder="Número do Documento"
         name="docNumber"
         value={formData.docNumber}
         onChange={handleChange}
         required
-      />
+        />
       <Input
         label="Data de Nascimento"
+        placeholder="Data de Nascimento"
         name="dateOfBirth"
         type="date"
         value={formData.dateOfBirth}
         onChange={handleChange}
         required
-      />
+        />
       <div className={styles['employee-form__phones']}>
-        <label>Telefone(s):</label>
         {formData.phoneNumbers.map((phone, index) => (
           <Input
             label='Phone'
@@ -129,12 +134,14 @@ const EmployeeForm: React.FC<EmployeeFormProps> = ({ onSubmit, initialData = {} 
 
       <Input
         label="Nome do Gerente"
+        placeholder="Nome do Gerente"
         name="managerName"
         value={formData.managerName || ''}
         onChange={handleChange}
       />
       <Input
         label="Senha"
+        placeholder="Senha"
         name="password"
         type="password"
         value={formData.password || ''}

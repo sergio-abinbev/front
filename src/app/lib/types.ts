@@ -1,13 +1,14 @@
+import { Placeholder } from './../../../node_modules/@babel/types/lib/index-legacy.d';
 export interface Employee {
   id: number;
   firstName: string;
   lastName: string;
   email: string;
-  docNumber: string; 
+  docNumber: string;
   phoneNumbers: string[];
-  managerName?: string; 
-  password?: string; 
-  dateOfBirth: string; 
+  managerName?: string;
+  password?: string;
+  dateOfBirth: string;
   isActive?: boolean;
 }
 
@@ -45,8 +46,14 @@ export interface InputProps {
   type?: string;
   required?: boolean;
   [key: string]: any;
+  placeholder: string
 }
 export interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   label: string;
-  hasError?: boolean; 
+  hasError?: boolean;
+}
+
+export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  variant?: 'primary' | 'secondary' | 'danger';
+  size?: 'small' | 'medium' | 'large';
 }

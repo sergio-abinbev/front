@@ -16,7 +16,6 @@ export const Header: React.FC = () => {
               alt="ABInBev Logo"
               width={120}
               height={40}
-              priority
             />
           </Link>
         </div>
